@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Roboto:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #8CC461;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw
+}
+
+#main {
+    width: 80vw;
+    height: 80vh;
+    margin: auto;
+    padding-top: 3.8rem;
+    padding-bottom: 4rem;
+}
+
+.remove {
+    display: none !important;
+}
+
+/* .................................SCORE BOARD................................... */
+
+.score-board {
+    width: 50rem;
+    height: 9.875rem;
+    border-radius: 0.8125rem;
+    border: 2px solid #FFF;
+    padding: 0.7rem 1rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.game-title {
+    color: #FFF;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
+    line-height: 2.8rem;
+}
+
+.score-board > div:nth-child(2) {
+    display: flex;
+    gap: 2rem;
+}
+
+.scores {
+    width: 8.6875rem;
+    height: 8.2rem;
+    background-color: #FFF;
+    border-radius: 0.5625rem;
+    text-align: center;
+    padding: 0.4rem;
+    color: #656565;
+    font-size: 1.0625rem;
+    font-weight: 400;
+}
+
+.scores div {
+    font-size: 4.25rem;
+    color: #252525;
+    font-weight: 500;
+}
+
+.reset {
+    position: absolute;
+    top: 33%;
+    right: 18.5%;
+    width: 3rem;
+    height: 3rem;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* .............................CHOOSE RPS................................. */
+
+.rps-options {
+    max-width: max-content;
+    margin: 11rem auto;
+    position: relative;
+}
+
+.rps-options hr {
+    position: relative;
+    border: none;
+    width: 13rem;
+    height: 1.1rem;
+    background: rgba(0, 0, 0, 0.64);
+}
+
+.line-left {
+    transform-origin: left;
+    right: 10px;
+    transform: rotate(60.58deg);
+}
+
+.line-right {
+    transform: rotate(-60.58deg);
+    transform-origin: right;
+    left: 10px;
+    bottom: 23px;
+}
+
+.rps-options div {
+    position: absolute;
+    transition: transform 0.8s;
+}
+
+.rps-options div:hover {
+    transform: scale(1.2);
+}
+
+.rock, .scissors, .paper {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 100%;
+    box-shadow: 3px 0px 30px 1px rgba(0, 0, 0, 0.2) inset;
+    cursor: pointer;
+}
+
+.rock {
+    border: 13px solid;
+    border-color: #0074B6;
+    top: -3rem;
+    right: 75%;
+}
+
+.scissors {
+    border: 13px solid;
+    border-color: #BD00FF;
+    top: -3rem;
+    left: 75%;
+}
+
+.paper {
+    border: 13px solid;
+    border-color: #FFA943;
+    left: 20%;
+    bottom: -13rem;
+}
+
+/* ...................................RPS RESULT................................. */
+
+.rps-result {
+    width: 60%;
+    height: 50%;
+    margin: 13rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    color: #FFF;
+    text-align: center;
+}
+
+.rps-result p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.user-pick div, .pc-pick div {
+    width: 10rem;
+    height: 10rem;
+    cursor: default;
+}
+
+.result-tile h1 {
+    margin-top: 5rem;
+    margin-bottom: 0;
+    letter-spacing: 0.24375rem;
+}
+
+.result-tile h3 {
+    letter-spacing: 0.15625rem;
+    margin-top: 0;
+}
+
+.winner-animation {
+	animation: winnerAnimation 0.8s alternate-reverse infinite;
+    outline:#289a27 solid 10px;
+}
+
+.winner-animation::after {
+	content: "";
+	position: absolute;
+	border: 25px solid rgba(29, 168, 43, 0.79);
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	animation: winnerAnimation 0.8s alternate-reverse infinite;
+}
+
+.winner-animation::before {
+	content: "";
+	position: absolute;
+	border: 25px solid rgba(46, 154, 37, 0.39);
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	animation: winnerAnimation 0.8s alternate-reverse infinite;
+}
+
+@keyframes winnerAnimation {
+	0% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.play-again {
+    width: 10.875rem;
+    height: 2.75rem;
+    border-radius: 0.5625rem;
+    background-color: #FFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ...................................SUCCESS PAGE............................... */
+
+#hurray-page {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.hurray-title {
+    color: #FFF;
+}
+
+.hurray-title h1 {
+    font-size: 5.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.56875rem;
+    margin-bottom: 0;
+}
+
+.hurray-title h3 {
+    font-size: 2.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.25625rem;
+    margin: 1rem auto 5rem auto;
+}
+
+/* stars */
+.star1,.star2,.star3,.star4,.star5,.star6,.star7,.star8 {
+	position: absolute;
+}
+
+.star1 {
+	width: 20px;
+	top: 10%;
+	right: 10%;
+	animation: starTwinkle 0.4s ease-in-out alternate-reverse infinite;
+}
+.star2 {
+	width: 20px;
+	top: 25%;
+	left: 10%;
+	animation: starTwinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+.star3 {
+	width: 50px;
+	top: 10%;
+	left: 20%;
+	animation: starTwinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star4 {
+	width: 80px;
+	top: 10%;
+	right: 20%;
+	animation: starTwinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+.star5 {
+	top: 40%;
+	left: 5%;
+	animation: starTwinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star6 {
+	top: 50%;
+	right: 10%;
+	animation: starTwinkle 1s ease-in-out alternate-reverse infinite;
+}
+.star7 {
+	width: 30px;
+	bottom: 10%;
+	right: 22%;
+	animation: starTwinkle 0.4s ease-in-out alternate-reverse infinite;
+}
+.star8 {
+	width: 40px;
+	bottom: 10%;
+	left: 25%;
+	animation: starTwinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes starTwinkle {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* ................................FOOTER BUTTONS............................. */
+
+#footer {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 1.5rem;
+    float: right;
+}
+
+.game-rules {
+    position: relative;
+    width: 17.375rem;
+    height: 20.3125rem;
+    border-radius: 0.8125rem;
+    border: 7px solid #FFF;
+    background-color: #004429;
+    color: #FFF;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+.game-rules h1 {
+    width: max-content;
+    margin: 1rem auto;
+    font-weight: 500;
+}
+
+.game-rules ul {
+    position: absolute;
+    list-style: none;
+    font-size: 0.8125rem;
+}
+
+.game-rules li {
+	margin: 0 0.6rem 0.625rem 0.3rem ;
+    font-weight: 400;
+}
+
+.game-rules li::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+    left: 20px;
+	margin-top: 5px;
+	width: 8px;
+	height: 8px;
+	background-color: #FFD600;
+}
+
+.close-rules {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    border: 7px solid #FFF;
+    background-color: #FF0000;
+    font-family: Dangrek;
+    font-size: 2.75rem;
+    font-weight: 400;
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    padding-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#footer button {
+    width: 7.4375rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    border: 2px solid #FFF;
+    outline: none;
+    background: transparent;
+    color: #FFF;
+    font-size: 1.3125rem;
+    font-weight: 400;
+    cursor: pointer;
+    letter-spacing: 0.13125rem;
+    margin: 0 1rem;
+    float: right;
+}

@@ -67,7 +67,7 @@ const findWinner = (user, pc, callback)=> {
             break;
     }
 
-    resultText.children[0].textContent = (userWins)? "YOU WON": "YOU LOST";
+    resultText.children[0].textContent = (userWins)? "YOU WIN": "YOU LOST";
     if(userWins) {
         showElement(nextButton);
         callback(user);
